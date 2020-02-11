@@ -33,5 +33,6 @@
       "ui5-middleware-proxy-basicauth",
       "ui5-task-nwabap-deployer"
     ]
-  }
+  },
+  "dependencies": {}
 }

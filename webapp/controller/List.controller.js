@@ -12,15 +12,12 @@ sap.ui.define(
 
 			var bindingContext = event.getSource().getBindingContext();
 
-			this.getOwnerComponent()
-				.getRouter()
-				.navTo(
+			this.navTo(
 					"detail",
 					{
 						id: bindingContext.getProperty("Id"),
-						"child*": encodeURIComponent("/productsForSupplier/" + bindingContext.getProperty("Id"))
-					},
-
+						"child*": "/productsForSupplier/" + bindingContext.getProperty("Id")
+					}
 				);
 		};
 
