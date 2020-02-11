@@ -1,0 +1,34 @@
+specVersion: "1.0"
+metadata:
+  name: ui5-suppliers-legacy
+type: application
+server:
+  customMiddleware:
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources
+      configuration:
+        rootPath: "C:\\tools\\sapui5-sdk\\1.60.14\\sapui5\\resources"
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /test-resources
+      configuration:
+        rootPath: "C:\\tools\\sapui5-sdk\\1.60.14\\sapui5\\test-resources"
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources/be/rpan/epm/products/
+      configuration:
+        rootPath: "./node_modules/ui5-products-legacy/webapp/"
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
+      configuration:
+        debug: true
+        ext: "xml,json,properties"
+        port: 35729
+        path: webapp
+    - name: ui5-middleware-proxy-basicauth
+      afterMiddleware: compression
+      mountPath: /sap/opu/odata/
+      configuration:
+        baseUri: "https://dev-sapfiori.infrabel.be/sap/opu/odata/sap/"
+        client: "001"
