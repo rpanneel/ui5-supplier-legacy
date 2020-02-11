@@ -1,7 +1,6 @@
 sap.ui.define([
-	"sap/ui/core/UIComponent",
-	"sap/base/util/deepClone"
-], function(UIComponent, deepClone) {
+	"sap/ui/core/UIComponent"
+], function(UIComponent) {
 	"use strict";
 
 	const BaseComponent = UIComponent.extend("be.rpan.epm.suppliers.base.BaseComponent", /** @lends be.rpan.epm.suppliers.base.BaseComponent.prototype */ {

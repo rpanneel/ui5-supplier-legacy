@@ -8,12 +8,12 @@ server:
       afterMiddleware: compression
       mountPath: /resources
       configuration:
-        rootPath: "C:\\tools\\sapui5-sdk\\1.60.14\\sapui5\\resources"
+        rootPath: "C:\\repo\\sapui5-sdk\\1.60.21\\resources"
     - name: ui5-middleware-servestatic
       afterMiddleware: compression
       mountPath: /test-resources
       configuration:
-        rootPath: "C:\\tools\\sapui5-sdk\\1.60.14\\sapui5\\test-resources"
+        rootPath: "C:\\repo\\sapui5-sdk\\1.60.21\\test-resources"
     - name: ui5-middleware-servestatic
       afterMiddleware: compression
       mountPath: /resources/be/rpan/epm/products/
@@ -28,7 +28,7 @@ server:
         path: webapp
     - name: ui5-middleware-proxy-basicauth
       afterMiddleware: compression
-      mountPath: /sap/opu/odata/
+      mountPath: /sap/opu/odata/sap
       configuration:
-        baseUri: "https://dev-sapfiori.infrabel.be/sap/opu/odata/sap/"
+        baseUri: "https://vhcalnplci:44300/sap/opu/odata/sap/"
         client: "001"

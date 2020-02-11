@@ -18,7 +18,7 @@ sap.ui.define(
 					"detail",
 					{
 						id: bindingContext.getProperty("Id"),
-						"child*": "" // Can also be encodeURIComponent(bindingContext.getPath())
+						"child*": encodeURIComponent("/productsForSupplier/" + bindingContext.getProperty("Id"))
 					},
 
 				);
